@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      -
+
   pull_request:
     branches:
       - develop
@@ -15,15 +15,15 @@ jobs:
 
     steps:
       - name: Checkout do código
-        uses: actions/Checkout@v4
+        uses: actions/checkout@v4
 
-      - name: Instala o Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - name: Instala dependências
+      - name: Install dependencies
         run: npm install
 
-      - name: Roda os Testes
+      - name: Run tests
         run: npm test
